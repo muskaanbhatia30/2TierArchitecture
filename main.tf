@@ -1,3 +1,4 @@
+// adding module network
 module "tiernetwork"{
 source="./network"
 tier_vpc_tag=var.tier_vpc_tag
