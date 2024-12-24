@@ -1,0 +1,10 @@
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: current time display
+      - run: "the current time of the server $(date)"
