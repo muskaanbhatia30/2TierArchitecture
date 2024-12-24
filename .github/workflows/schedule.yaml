@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: current time display
-        run: "the current time of the server $(date)"
+        run: echo "The current time of the server is $(date)"
