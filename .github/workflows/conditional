@@ -1,0 +1,15 @@
+on:
+ workflow_dispatch
+     
+jobs:
+  hello:
+    if github.repository == "2TierArchitecture"
+    runs-on: ubuntu-latest
+    steps:
+      - name: current hello msg
+        run: echo "hello world"
+  bye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: current bye msg
+        run: echo "goodbye world"
