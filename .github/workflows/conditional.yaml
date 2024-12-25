@@ -3,7 +3,7 @@ on:
      
 jobs:
   hello:
-    if github.repository == "2TierArchitecture"
+    if: github.repository == "2TierArchitecture"
     runs-on: ubuntu-latest
     steps:
       - name: current hello msg
