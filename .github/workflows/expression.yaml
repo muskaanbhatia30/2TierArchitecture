@@ -23,6 +23,6 @@ jobs:
        if : ${{ failure() }}
        run: echo "jobs failed"
      - name: job success
-       if : ${{ success() }
+       if : ${{ success() }}
        run: echo " all jobs succeed"
   
