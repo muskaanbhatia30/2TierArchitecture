@@ -20,9 +20,9 @@ jobs:
      - name: Format and echo string
        run: echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
      - name: job failure
-       if : ${{ failure() }}
+       if :  failure() 
        run: echo "jobs failed"
      - name: job success
-       if : ${{ success() }}
+       if :  success() 
        run: echo " all jobs succeed"
   
