@@ -9,10 +9,10 @@ jobs:
    #steps 
    steps:
      - name: starts with 
-       if : startsWith("Hello World","He")
+       if : startsWith('Hello World','He')
        run: echo "string starts with HE"
      - name: ends with 
-       if : endsWith("Hello World","ld")
+       if : endsWith('Hello World','ld')
        run: echo "string starts with ld"
      - name: contains with 
        if : contains('Hello World','orld')
