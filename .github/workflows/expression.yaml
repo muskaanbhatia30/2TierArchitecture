@@ -18,7 +18,7 @@ jobs:
        if : contains('Hello World','orld')
        run: echo "string starts with orld"
      - name: Format and echo string
-       run: echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
+       run: echo ${{ format('Hello {0}, welcome to {1}!', 'Alice', 'GitHub Actions') }}
      - name: job failure
        if :  failure() 
        run: echo "jobs failed"
