@@ -1,0 +1,21 @@
+on: 
+ workflow_dispatch
+
+jobs:
+ - name: starts with 
+   if : startsWith("Hello World","He")
+   run: echo "string starts with HE"
+ - name: ends with 
+   if : endsWith("Hello World","ld")
+   run: echo "string starts with ld"
+ - name: conatins with 
+   if : contains('Hello World','orld')
+   run: echo "string starts with orld"
+ - name: Format and echo string
+   run: echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
+ - name: job failure
+   if ${{ failure() }}
+   run: echo "jobs failed"
+   if ${{ success() }}
+   run: echo " all jobs succeed"
+
