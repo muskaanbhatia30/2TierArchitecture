@@ -2,11 +2,11 @@ on:
  push
 
 jobs:
-// job name
+#job name
  expresionfunctions:
-   // runner
+   #runner
    runs-on: ubuntu-latest
-   // steps 
+   #steps 
    steps:
      - name: starts with 
        if : startsWith("Hello World","He")
@@ -14,7 +14,7 @@ jobs:
      - name: ends with 
        if : endsWith("Hello World","ld")
        run: echo "string starts with ld"
-     - name: conatins with 
+     - name: contains with 
        if : contains('Hello World','orld')
        run: echo "string starts with orld"
      - name: Format and echo string
