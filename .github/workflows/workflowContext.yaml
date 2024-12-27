@@ -1,8 +1,8 @@
 name: Example for workflow context
 on: push
 
-vars:
-  myvar: "variable through var context"
+# vars:
+#   myvar:  "variable through var context"
   
 jobs:
   example-job:
@@ -10,22 +10,33 @@ jobs:
     env:
       myenv_VAR: "environment variable through env context"
     steps:
-      - name: Print variaable value
-        run: echo "From vars: ${{ vars.myvar }}"
+      # - name: Print variable value
+      #   run: echo "From vars: ${{ vars.myvar }}"
         
       - name: Print env variable value
         run: echo "Step 1: $myenv_VAR"
 
-      - name: Modify env for next steps through github env way1
+      - name: Modify env for next steps through $GITHUB_ENV (Way 1)
         run: echo "myenv_VAR=Modified value" >> $GITHUB_ENV
 
-      - name: Print modified value
+      - name: Print modified env variable
         run: echo "Step 3: $myenv_VAR"
 
-      - name: Local modification way 2
+      - name: Local modification (Way 2)
         run: |
           myenv_VAR="Temporary value"
           echo "Step 4: $myenv_VAR"
 
-      - name: Print modified value again
+      - name: Print env variable after local modification
         run: echo "Step 5: $myenv_VAR"
+
+jobs:
+   githubcontext:
+   runs-on: ubuntu-latest
+    env:
+      myactor: ${{ gtihub.actor }}
+    steps:
+      - name: using gtihub context
+        run: echo "username: $myactor"
+    
+   
