@@ -8,21 +8,21 @@ jobs:
       myenv_VAR: "environment variable through env context"
     steps:
       - name: Print env variable value
-        run: echo "Step 1: $myenv_VAR"
+        run: echo "Step 1: ${{ myenv_VAR }}"
 
       - name: Modify env for next steps through $GITHUB_ENV (Way 1)
         run: echo "myenv_VAR=Modified value" >> $GITHUB_ENV
 
       - name: Print modified env variable
-        run: echo "Step 3: $myenv_VAR"
+        run: echo "Step 3: ${{ myenv_VAR }}"
 
       - name: Local modification (Way 2)
         run: |
           myenv_VAR="Temporary value"
-          echo "Step 4: $myenv_VAR"
+          echo "Step 4: ${{ myenv_VAR }}"
 
       - name: Print env variable after local modification
-        run: echo "Step 5: $myenv_VAR"
+        run: echo "Step 5: ${{ myenv_VAR }}"
 
   githubcontext:
     runs-on: ubuntu-latest
@@ -30,4 +30,4 @@ jobs:
       myactor: ${{ github.actor }}
     steps:
       - name: Using GitHub context
-        run: echo "Username: $myactor"
+        run: echo "Username: ${{ myactor }}"
